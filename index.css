@@ -1,0 +1,208 @@
+/* =========================================
+   CSS BAŞLANGICI - TASARIM VE DÜZEN
+   ========================================= */
+
+/* Genel sayfa stili: Koyu tema, mühendislik hissi */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Consolas', monospace;
+    background: linear-gradient(145deg, #1a1e2c 0%, #2a2f42 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* Ana hesap makinesi kabı - karbon fiber benzeri doku */
+.calculator {
+    max-width: 950px;
+    width: 100%;
+    background: #202433;
+    border-radius: 32px;
+    box-shadow: 20px 20px 40px #0f111a,
+        -10px -10px 30px #2f354a,
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 24px 20px 20px;
+    border: 1px solid #3d445e;
+}
+
+/* Ekran Bölümü */
+.display-container {
+    background: #0f1219;
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    box-shadow: inset 4px 4px 8px #07090e,
+        inset -4px -4px 8px #1b1f2b;
+    border: 1px solid #2e3440;
+}
+
+/* Geçmiş/İkincil ekran (işlem ifadesi) */
+.expression {
+    color: #7e8aa0;
+    font-size: 1rem;
+    min-height: 1.8rem;
+    text-align: right;
+    letter-spacing: 1px;
+    font-family: 'Consolas', monospace;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.expression::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ana sonuç ekranı */
+.result {
+    color: #e3e9ff;
+    font-size: 3.2rem;
+    font-weight: 500;
+    text-align: right;
+    line-height: 1.2;
+    min-height: 4rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Consolas', monospace;
+    letter-spacing: 1px;
+}
+
+/* Mod göstergeleri (Radyan/Derece, Bellek) */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    color: #5f6b8a;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 8px;
+    padding: 0 5px;
+}
+
+.status-indicator {
+    display: flex;
+    gap: 16px;
+}
+
+.mode-badge {
+    background: #2d3448;
+    padding: 4px 12px;
+    border-radius: 30px;
+    color: #a6b4d9;
+    box-shadow: inset 1px 1px 3px #10131e;
+}
+
+/* Buton Grid Alanı */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+
+/* Genel Buton Stili */
+.btn {
+    background: #2c3143;
+    border: none;
+    border-radius: 18px;
+    padding: 14px 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d6defa;
+    box-shadow: 4px 4px 8px #161a26,
+        -3px -3px 6px #343b50,
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: all 0.08s ease;
+    text-align: center;
+    font-family: 'Segoe UI', 'Consolas', monospace;
+    border: 1px solid #3f465e;
+    user-select: none;
+}
+
+/* Basıldığında efekt */
+.btn:active {
+    box-shadow: inset 4px 4px 8px #10131e,
+        inset -3px -3px 6px #3a4056;
+    transform: scale(0.97);
+    color: #ffffff;
+}
+
+/* Farklı kategoriler için renk kodlaması */
+.btn-number {
+    background: #373e56;
+    color: #f0f4ff;
+    font-weight: 600;
+}
+
+.btn-operator {
+    background: #3f4a6b;
+    color: #b7c9ff;
+    font-size: 1.3rem;
+}
+
+.btn-function {
+    background: #2d3448;
+    color: #b0c2f5;
+    font-size: 0.95rem;
+}
+
+.btn-equals {
+    background: #4f6a9e;
+    color: white;
+    font-weight: bold;
+    grid-column: span 1;
+}
+
+.btn-clear {
+    background: #6a4050;
+    color: #ffccd5;
+}
+
+.btn-memory {
+    background: #3d455e;
+    color: #ccd6ff;
+    font-size: 0.9rem;
+}
+
+/* Bazı butonları daha geniş yapmak için (örneğin 0 tuşu) */
+.span-2 {
+    grid-column: span 2;
+}
+
+/* Mobil uyum: daha küçük ekranlarda 8 sütun yerine 6 sütuna düş */
+@media (max-width: 700px) {
+    .buttons-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .btn {
+        padding: 12px 2px;
+        font-size: 0.9rem;
+    }
+
+    .result {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .buttons-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Açıklama etiketi (footer) */
+.footer-note {
+    text-align: center;
+    color: #6a7491;
+    margin-top: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}

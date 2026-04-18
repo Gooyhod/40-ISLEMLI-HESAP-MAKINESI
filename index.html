@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mühendislik Hesap Makinesi | 40+ İşlem</title>
+    <!-- Ayrı CSS dosyası bağlantısı -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <!-- ========= EKRAN BÖLÜMÜ ========= -->
+        <div class="display-container">
+            <div class="expression" id="expressionDisplay"></div>
+            <div class="result" id="resultDisplay">0</div>
+            <div class="status-bar">
+                <div class="status-indicator">
+                    <span id="angleModeIndicator" class="mode-badge">DEG</span>
+                    <span id="memoryIndicator" class="mode-badge" style="opacity:0.4;">M</span>
+                </div>
+                <span>MÜHENDİSLİK v1.0</span>
+            </div>
+        </div>
+
+        <!-- ========= BUTONLAR GRID ========= -->
+        <div class="buttons-grid" id="buttonContainer">
+            <!-- JavaScript tarafından dinamik olarak doldurulacak -->
+        </div>
+        <div class="footer-note">
+            ← Mühendislik Hesapları | 40+ İşlem | Karekök, Trigonometri, Log, Üstel, Bellek →
+        </div>
+    </div>
+
+    <!-- Ayrı JavaScript dosyası bağlantısı (defer ile DOM yüklendikten sonra çalışır) -->
+    <script src="index.js" defer></script>
+</body>
+
+</html>
